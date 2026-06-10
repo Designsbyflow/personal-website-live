@@ -1732,10 +1732,22 @@ footer.simple .footer-legal span {
 
   .contact-section {
     padding: var(--space-xl) var(--space-md);
+    overflow-x: hidden;
+  }
+
+  .contact-heading {
+    white-space: normal;
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
