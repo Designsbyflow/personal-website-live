@@ -1,0 +1,58 @@
+# robots.txt for personal portfolio
+# This is a private portfolio. Scraping, indexing, or using any content
+# (especially artwork and images) for AI/ML training is strictly prohibited.
+
+# Block all AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+# Allow standard search engine indexing (remove these if you want full privacy)
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+# All other bots: no access to assets (artwork, images)
+User-agent: *
+Disallow: /assets/
+Disallow: /master_images/

@@ -1,0 +1,20 @@
+# ai.txt — AI agent permissions for this website
+# See: https://site.ai/ai-txt (emerging standard)
+
+# This is a personal private portfolio. All content — including but not limited
+# to artwork, illustrations, sketchnotes, and editorial work — is protected.
+
+Contact: benandflo.woodley@gmail.com
+
+# Training data usage
+Training: prohibited
+
+# Scraping / crawling
+Scraping: prohibited
+
+# Image use
+Image-Training: prohibited
+
+# Summary: No AI system may use the content of this website for model training,
+# fine-tuning, dataset creation, or any derivative AI/ML purpose without explicit
+# written consent from the owner.
