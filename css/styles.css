@@ -1389,7 +1389,7 @@ footer {
 }
 
 .hero-artwork img {
-  max-width: min(520px, 80vw);
+  max-width: min(1200px, 95vw);
   height: auto;
   display: block;
 }

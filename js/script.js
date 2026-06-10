@@ -88,52 +88,7 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Form handling with Formspree
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const button = contactForm.querySelector('.btn-primary');
-    const originalText = button.textContent;
-    
-    try {
-      button.disabled = true;
-      button.textContent = 'Sending...';
-      
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        button.textContent = '✓ Message sent!';
-        contactForm.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-        }, 3000);
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      button.textContent = 'Error sending message';
-      
-      // Reset button after 3 seconds
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.disabled = false;
-      }, 3000);
-    }
-  });
-}
+// Form submission is handled in contact.html via the Forminit SDK
 
 // Keyboard navigation enhancement
 document.addEventListener('keydown', (e) => {
