@@ -166,6 +166,11 @@ a:hover {
   color: var(--accent);
 }
 
+/* Links inside book page text (e.g. contact links) */
+.editorial-hero-text a {
+  color: var(--accent);
+}
+
 .project p {
   max-width: 100%;
 }
@@ -1711,7 +1716,6 @@ footer.simple .footer-legal span {
 
 /* ===== ABOUT CLOSING LINE ===== */
 .about-closing {
-  font-family: 'Bayon', sans-serif;
   line-height: 1.4;
   margin-top: 1.5em;
 }
@@ -1793,4 +1797,139 @@ footer.simple .footer-legal span {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+
+/* ===== BOOK PAGE — ICON INDEX ===== */
+.book-index-hero {
+  margin-bottom: var(--space-lg);
+}
+
+.book-index-hero .display-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.book-index-intro {
+  max-width: 100ch;
+  margin-top: 0;
+}
+
+.book-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl) var(--space-lg);
+  padding: 0;
+  margin: var(--space-2xl) 0 var(--space-2xl);
+}
+
+/* Books page hero: no extra section padding below, so the icons sit close to the text */
+.book-hero {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.book-icon {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  text-align: center;
+}
+
+.book-icon-image {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.book-icon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.book-icon:hover .book-icon-image img {
+  transform: scale(1.03);
+}
+
+.book-icon-title {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-subheading);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.book-icon:hover .book-icon-title,
+.book-icon:focus-visible .book-icon-title {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .book-icon-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Back link on individual book project pages */
+.back-link {
+  display: inline-block;
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  font-family: var(--font-subheading);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Book pages: hero image keeps its full portrait proportion (covers are 1275:1800), so it is never cut off */
+.book-project-hero .editorial-hero-image {
+  aspect-ratio: 1275 / 1800;
+}
+
+@media (max-width: 768px) {
+  .book-project-hero .editorial-hero-image {
+    aspect-ratio: auto;
+  }
+}
+
+/* Project pages: bring the image grid up under the hero */
+.book-project-hero {
+  padding-top: var(--space-sm);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.book-project-hero + .book-section {
+  margin-top: var(--space-lg);
+}
+
+/* Row-based two-column gallery: images share a row, so both columns end on the same line */
+.book-col-grid--rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+.book-col-grid--rows .book-wide {
+  grid-column: 1 / -1;
+}
+@media (max-width: 768px) {
+  .book-col-grid--rows {
+    grid-template-columns: 1fr;
+  }
 }
