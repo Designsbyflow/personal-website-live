@@ -1896,14 +1896,48 @@ footer.simple .footer-legal span {
 }
 
 
-/* Book pages: hero image keeps its full portrait proportion (covers are 1275:1800), so it is never cut off */
-.book-project-hero .editorial-hero-image {
-  aspect-ratio: 1275 / 1800;
+/* Book pages: the whole cover is always visible, never cropped and never taller than the screen.
+   Desktop (above 1024px): cover sits to the left of the text at 45% width.
+   Tablet and mobile (1024px and below): cover stacks above the text, centred.
+   In both cases the cover keeps its 1275:1800 portrait shape, and its width is capped so its height
+   fits on screen below the header (screen height minus 180px). The box never clips its contents. */
+.book-project-hero .editorial-hero-inner {
+  align-items: flex-start;
 }
 
-@media (max-width: 768px) {
+.book-project-hero .editorial-hero-image {
+  aspect-ratio: auto;
+  flex: none;
+  overflow: visible;
+  width: min(45%, max(200px, calc((100vh - 180px) * 0.7083)));
+  width: min(45%, max(200px, calc((100svh - 180px) * 0.7083)));
+}
+
+.book-project-hero .editorial-hero-image img {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 1024px) {
+  .book-project-hero .editorial-hero-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .book-project-hero .editorial-hero-image {
-    aspect-ratio: auto;
+    width: min(100%, max(200px, calc((100vh - 180px) * 0.7083)));
+    width: min(100%, max(200px, calc((100svh - 180px) * 0.7083)));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-project-hero .editorial-hero-content {
+    width: 100%;
   }
 }
 
