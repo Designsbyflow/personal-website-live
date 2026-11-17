@@ -877,25 +877,9 @@ footer {
   margin-top: var(--space-lg);
 }
 
-/* Both columns end at the same horizontal line:
-   the grid stretches both cols to equal height, and the last
-   image in each col expands (with object-fit: cover) to fill
-   whatever space remains. */
-.book-col-grid--balanced {
-  align-items: stretch;
-}
-
-.book-col-grid--balanced .book-col {
-  height: 100%;
-}
-
-.book-col-grid--balanced .book-col img:last-child {
-  flex: 1;
-  height: 0;        /* lets flex-grow control the height */
-  min-height: 120px;
-  object-fit: cover;
-  object-position: center;
-}
+/* Columns are no longer force-stretched to match height — each image
+   keeps its natural size, so the two columns may end at slightly
+   different heights. */
 
 /* — Project sections (Book Cover, Icon Library, Children's Book) — */
 .book-section {
@@ -1472,14 +1456,21 @@ footer {
 }
 
 .coming-soon-text {
-  font-family: var(--font-subheading);
-  font-size: clamp(1.5rem, 5vw, 2.8rem);
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text);
   margin: 0;
-  max-width: none;
-  line-height: 1.3;
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+.coming-soon-cta {
+  margin-top: var(--space-lg);
+}
+
+.coming-soon-text a {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 /* ===== SIMPLE FOOTER ===== */
